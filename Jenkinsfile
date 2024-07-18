@@ -9,13 +9,13 @@ pipeline {
         }
         stage('Setup Python') {
             steps {
-                sh 'python --version'
-                sh 'pip install -r requirements.txt'
+                sh 'python3 --version'
+                sh 'pip3 install -r requirements.txt'
             }
         }
         stage('Run main.py') {
             steps {
-                sh 'python main.py'
+                sh 'python3 main.py'
             }
         }
     }
