@@ -9,8 +9,9 @@ pipeline {
         }
         stage('Setup Python') {
             steps {
+                sh 'ls -la' // List directory contents for debugging
                 sh 'python3 --version'
-                sh 'pip3 install -r requirements.txt'
+                sh 'pip3 install -r requirements.txt' // Update this if 'requirements.txt' is in a subdirectory
             }
         }
         stage('Run main.py') {
