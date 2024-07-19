@@ -17,7 +17,7 @@ pipeline {
             steps {
                 sh 'python3 main.py'
             }
-    //     }
+        }
     //     stage('Run Tests') {
     //         steps {
     //             sh 'mkdir -p test-reports' // Ensure test-reports directory exists
