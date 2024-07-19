@@ -7,7 +7,7 @@ pipeline {
                 script {
                     echo "Cloning the repository..."
                 }
-                git branch: "${master}", url: 'https://github.com/aviman-8536/multibranch-pipeline-repo.git'
+                git branch: "${env.master}", url: 'https://github.com/aviman-8536/multibranch-pipeline-repo.git'
             }
         }
         stage('Install Dependencies') {
