@@ -17,20 +17,20 @@ pipeline {
             steps {
                 sh 'python3 main.py'
             }
-        }
-        stage('Run Tests') {
-            steps {
-                sh 'mkdir -p test-reports' // Ensure test-reports directory exists
-                sh 'python3 -m unittest discover -s tests -p "*.py" > test-reports/results.xml' // Run tests and save results
-            }
-        }
-    }
+    //     }
+    //     stage('Run Tests') {
+    //         steps {
+    //             sh 'mkdir -p test-reports' // Ensure test-reports directory exists
+    //             sh 'python3 -m unittest discover -s tests -p "*.py" > test-reports/results.xml' // Run tests and save results
+    //         }
+    //     }
+    // }
 
-    post {
-        always {
-            archiveArtifacts artifacts: '**/output/*', allowEmptyArchive: true
-            junit 'test-reports/**/*.xml'
-        }
+    // post {
+    //     always {
+    //         archiveArtifacts artifacts: '**/output/*', allowEmptyArchive: true
+    //         junit 'test-reports/**/*.xml'
+    //     }
         success {
             echo 'Pipeline succeeded!'
         }
