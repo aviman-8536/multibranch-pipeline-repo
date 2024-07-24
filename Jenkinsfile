@@ -7,7 +7,7 @@ pipeline {
                 script {
                     echo "Cloning the repository..."
                 }
-                git url: 'https://github.com/aviman-8536/multibranch-pipeline-repo.git', branch: 'dev'
+                git url: 'https://github.com/aviman-8536/auto-trigger-repo.git', branch: 'release'
             }
         }
         stage('Install Dependencies') {
@@ -23,6 +23,15 @@ pipeline {
                 script {
                     echo "Running tests..."
                     // Add commands to run your tests, e.g., pytest
+                }
+            }
+        }
+        stage('Read and Print Python Script') {
+            steps {
+                script {
+                    echo "Reading and printing Python script..."
+                    def scriptContent = readFile 'main.py'
+                    echo scriptContent
                 }
             }
         }
